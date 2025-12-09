@@ -1,0 +1,3679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dent 518/DH252 Final Exam Questions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fun font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      color: #222;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dark-mode {
+      background: #20242d;
+      color: #e2e6ea;
+    }
+    header {
+      background: none;
+      padding: 1.1rem 2rem 0.1rem 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-family: "Fredoka One", cursive;
+      color: #1199bb;
+      font-size: 2.7rem;
+      line-height: 1;
+      margin: 0.7rem 0;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 0 #e8fcff;
+      font-weight: 900;
+      word-spacing: 0.1em;
+    }
+    .dark-mode h1 {
+      color: #f9d23c;
+      text-shadow: 2px 2px 0 #1f2230;
+    }
+    .theme-toggle {
+      background: #1199bb;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 0.5rem 1.3rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+      font-size: 1.07rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 1px 12px #aaa2;
+    }
+    .dark-mode .theme-toggle {
+      background: #f9d23c;
+      color: #23272e;
+    }
+    .progress-bar-container {
+      background: #eaecef;
+      border-radius: 12px;
+      width: 100%;
+      height: 18px;
+      margin: 0.7rem 0 1rem 0;
+      overflow: hidden;
+      box-shadow: 0 2px 7px #bbb2;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #1199bb 60%, #f9d23c 100%);
+      width: 0;
+      border-radius: 12px 0 0 12px;
+      transition: width 0.4s;
+    }
+    .dark-mode .progress-bar-container {
+      background: #363a44;
+    }
+    .dark-mode .progress-bar {
+      background: linear-gradient(90deg,#f9d23c 0%,#1199bb 100%);
+    }
+    .exam-container {
+      max-width: 790px;
+      margin: 18px auto 25px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 9px 40px #1199bb33;
+      padding: 2rem 1.5rem;
+    }
+    .dark-mode .exam-container {
+      background: #262933;
+      color: #e2e6ea;
+      box-shadow: 0 9px 40px #f9d23c33;
+    }
+    .question {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.3rem;
+      border-bottom: 1px solid #ececef;
+      position: relative;
+    }
+    .dark-mode .question {
+      border-bottom: 1px solid #363a44;
+    }
+    .question-number {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1199bb;
+      display:inline-block;
+      min-width:2rem;
+      vertical-align:middle;
+    }
+    .dark-mode .question-number {
+      color: #f9d23c;
+    }
+    .choices {
+      margin-top: 12px;
+    }
+    .choices label {
+      display: block;
+      margin: 0.22rem 0;
+      background: #f7fcfd;
+      border-radius: 9px;
+      padding: 0.42rem 1rem 0.42rem 0.95rem;
+      cursor: pointer;
+      font-size: 1.03rem;
+      transition: background 0.22s, color 0.22s;
+      border: 1px solid transparent;
+    }
+    .choices input[type="radio"] {
+      margin-right: 13px;
+    }
+    .choices label.correct {
+      background: #c9facd;
+      color: #227d47;
+      border: 1px solid #89e3aa;
+      font-weight: bold;
+    }
+    .choices label.incorrect {
+      background: #fad2cf;
+      color: #b14c59;
+      border: 1px solid #f0777e;
+      font-weight: bold;
+    }
+    .dark-mode .choices label {
+      background: #35394a;
+      color: #e2e6ea;
+    }
+    .dark-mode .choices label.correct {
+      background: #195d3d;
+      color: #9fe7bb;
+    }
+    .dark-mode .choices label.incorrect {
+      background: #79283b;
+      color: #ffe0e0;
+    }
+    .submit-btn {
+      font-size: 1.16rem;
+      background: linear-gradient(90deg,#f9d23c 41%,#1199bb 100%);
+      color: #23272e;
+      border: none;
+      border-radius: 18px;
+      padding: 0.83rem 1.5rem;
+      cursor: pointer;
+      margin: 1.55rem auto;
+      display: block;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 20px #f9d23c22;
+      transition: background 0.3s;
+    }
+    .dark-mode .submit-btn {
+      background: linear-gradient(90deg,#1199bb 41%,#f9d23c 100%);
+      color:  #fff;
+      box-shadow: 0 4px 20px #1199bb22;
+    }
+    .score {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.32rem;
+      margin: 2.3rem 0 1rem 0;
+      color: #1199bb;
+    }
+    .dark-mode .score {
+      color: #f9d23c;
+    }
+    .animation {
+      width:50px;
+      height:50px;
+      display:inline-block;
+      vertical-align:middle;
+      margin-bottom:-17px;
+      margin-right:10px;
+      margin-left:0px;
+    }
+    /* Responsive */
+    @media screen and (max-width:900px) {
+      .exam-container {
+        max-width: 99vw;
+        padding:2vw;
+      }
+      h1 { font-size:2rem;}
+      .question {font-size:0.97rem;}
+      .choices label {font-size:1.0rem;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dent 518/DH252 Final Exam Questions</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️ Switch theme</button>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <button class="submit-btn" onclick="submitExam()">Submit Exam</button>
+  </header>
+  <main>
+    <div class="exam-container" id="examContainer"></div>
+    <div id="scoreContainer" class="score"></div>
+    <button class="submit-btn" onclick="submitExam()">Submit Exam</button>
+  </main>
+  <script>
+    // Cute SVG for behavioral science theme
+    const animationSVG =`
+    <svg class="animation" viewBox="0 0 50 50" fill="none">
+      <ellipse cx="25" cy="25" rx="24" ry="24" fill="#f9d23c" stroke="#1199bb" stroke-width="2"/>
+      <ellipse cx="19" cy="22" rx="4" ry="5" fill="#fff"/>
+      <ellipse cx="31" cy="22" rx="4" ry="5" fill="#fff"/>
+      <ellipse cx="19" cy="22" rx="1.5" ry="2.2" fill="#1199bb"/>
+      <ellipse cx="31" cy="22" rx="1.5" ry="2.2" fill="#1199bb"/>
+      <path d="M 18 32 Q 25 38 32 32" stroke="#1199bb" stroke-width="2" fill="none"/>
+      <path d="M 25 42 Q23 43 27 42" stroke="#b14c59" stroke-width="2" fill="none"/>
+    </svg>`;
+
+    // List ALL questions [text, choices[], correct_answer_index]
+    const questions = [
+      {
+  q: "In a study showing adult patients Seinfeld episodes and recording their faces, were periodontitis and the way they smiled associated?",
+  choices: [
+    "a. Yes: the width of their smile and their periodontal health were associated",
+    "b. Yes: the height of their smile and their periodontal health were associated",
+    "c. Yes: the number of teeth shown and their periodontal health were associated",
+    "d. Yes: the width and height of their smile and the number of teeth shown were all associated with their periodontal health",
+    "e. No: there was no association"
+  ],
+  correct: 3 // assuming d is correct
+},
+{
+  q: "In a study in Flint, the no-show rate of parents with children for their follow up visit to an emergency appointment was around 50%. What helped most to get the return rate to over 90%?",
+  choices: [
+    "a. Provide transportation help with bus tokens or taxi vouchers",
+    "b. Using visual individualized information with the help of an odontogram",
+    "c. Using visual standardized information about tooth decay.",
+    "d. Using individualized and standardized communication together",
+    "e. Offer flexible scheduling"
+  ],
+  correct: 3 // assuming d is correct
+},
+{
+  q: 'In "Why Behavioral Science in your education?", the material highlights that the most important tool in dentistry is the',
+  choices: [
+    "a. Dental instruments",
+    "b. Radiographic equipment",
+    "c. Spoken word",
+    "d. Patient history form",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In response to a treatment recommendation to have periodontal surgery as a treatment for periodontitis, which factor(s) was associated with patients’ decision to have the treatment of periodontal surgery?",
+  choices: [
+    "a. Lower levels of dental fear",
+    "b. Agreeing more that the dentists had listened to them",
+    'c. Agreeing more with the statement “I believe that my dentist is concerned not to inflict pain”',
+    "d. B and c are correct",
+    "e. A, b and c are correct."
+  ],
+  correct: 4 // assuming e is correct
+},
+{
+  q: 'In a study comparing the oral health of patients who reported that they regularly brushed their teeth vs. not regularly brushed their teeth, patients who reported "Regular brushing:',
+  choices: [
+    "a. Were more likely to have probing depth <4 mm",
+    "b. Were more likely to have decayed teeth determined radiographically",
+    "c. Were more likely to have decayed teeth determined clinically",
+    "d. B and c are correct",
+    "e. A, b and c are correct"
+  ],
+  correct: 4 // assuming e is correct
+},
+{
+  q: "Research presented in class showed that Early Childhood Caries (ECC) is associated with?",
+  choices: [
+    "a. Lower weight as assessed with standardized weight charts for children",
+    "b. Lower height as assessed with standardized height charts for children",
+    "c. Increased incidence of asthma",
+    "d. a and b are correct",
+    "e. a, b and c are correct"
+  ],
+  correct: 3 // assuming e is correct
+},
+{
+  q: "CODA Standard 2-25 for predoctoral dental students requires graduates to be competent in the application of self-assessment skills in order to prepare them for what long-term goal?",
+  choices: [
+    "a. Achieving professional licensure",
+    "b. Lifelong learning",
+    "c. Interacting with diverse population groups",
+    "d. Critical thinking",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which initial intervention, attempted at the Mott Children’s Pediatric Dentistry Clinic in Flint, MI, failed to increase the follow-up return rate for young children requiring further treatment?",
+  choices: [
+    "a. Providing visual individualized information with odontograms",
+    "b. Providing visual individualized information with odontograms",
+    "c. Providing bus tokens and taxi vouchers",
+    "d. A and b are correct",
+    ""
+  ],
+  correct: 2 // assuming d is correct
+},
+{
+  q: "According to research presented in class, issue was rated as least challenging by dentists working in Federally Qualified Health Centers (FQHCs),",
+  choices: [
+    "a. Patients keeping appointments",
+    "b. Patients' attitudes towards care",
+    "c. Financial reimbursement",
+    "d. Keep office in good financial standing",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "When considering differences in the responses of patients choosing surgery versus non-surgery for periodontal treatment, which factor showed the largest difference between the two groups?",
+  choices: [
+    "a. My dentist listens to me.",
+    "b. I like the dentist.",
+    "c. I trust the dentist.",
+    "d. I believe that my dentist is concerned not to inflict pain.",
+    ""
+  ],
+  correct: 0 // assuming a is correct
+},
+{
+  q: "When discussing research showing that psychological states can affect perceived pain and use of pain medication, what clinical outcome was found to be affected?",
+  choices: [
+    "a. Caries risk",
+    "b. Gingival inflammation",
+    "c. Wound healing",
+    "d. Bruxism severity",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "According to data comparing indicators of gingivitis/periodontal disease of patients who reported regularly vs. not regularly brushing their teeth, which differences were significant?",
+  choices: [
+    "a. % probing depth at last charting <4 mm",
+    "b. % probing depth at last charting 4 to 6 mm",
+    "c. % probing depth at last charting over 6 mm",
+    "d. % teeth with bleeding on probing",
+    ""
+  ],
+  correct: 0 // assuming d is correct
+},
+{
+  q: "Which quote(s) is/are used in the lecture material to emphasize that the patient-provider relationship is paramount to successful treatment decisions?",
+  choices: [
+    "a. \"You are treating people, not teeth.\"",
+    "b. \"The Spoken word is the most important tool in dentistry.\"",
+    "c. \"Your patients do not care how much you know, until they know how much you care.”",
+    "d. b and c were used and are correct",
+    "e. a, b and c were used and are correct"
+  ],
+  correct: 4 // assuming e is correct
+},
+{
+  q: "Which of the following was a successful strategy to improve follow-up appointment rates at the Mott Children’s Pediatric Dentistry Clinic?",
+  choices: [
+    "a. Providing bus tokens",
+    "b. Visual information for the parents",
+    "c. Visual educational materials for the child",
+    "d. Offering flexible scheduling",
+    ""
+  ],
+  correct: 1 // assuming c is correct
+},
+{
+  q: "Which quote best reflects the importance of empathy in dental care?",
+  choices: [
+    "\"We have to find the right channel.\"",
+    "\"Your patients do not care how much you know, until they know how much you care.”",
+    "\"You are treating people, not teeth.\"",
+    "\"The Spoken word is the most important tool in dentistry.\"",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which psychological factor is linked to differences in wound healing and pain perception in dental patients?",
+  choices: [
+    "A. Dental fear",
+    "B. Personality type",
+    "C. Psychological state",
+    "D. Sleep quality",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following was cited as a reason patients may not return for follow-up appointments?",
+  choices: [
+    "a. Lack of interest in oral health",
+    "b. Poor dental hygiene habits",
+    "c. Low oral health literacy",
+    "d. High treatment costs",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following is not listed as a component of health education in the course?",
+  choices: [
+    "a. 1:1 education",
+    "b. Group education",
+    "c. Public service announcements",
+    "d. Tobacco cessation counseling",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following contributes to better patient cooperation according to the lecture?",
+  choices: [
+    "a. Informing patients about every detail of the upcoming procedure",
+    "b. Building rapport and trust",
+    "c. Keeping patient information about details at a minimum",
+    "d. Keeping appointments short",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What was discussed in the introduction to the class as one of the main reasons behavioral science is taught in dental education?",
+  choices: [
+    "A. Improve student instrumentation",
+    "B. The spoken word is the most important tool in dentistry",
+    "C. Increase patient moral",
+    "D. It replaces the need for clinical training",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which of the following best describes a key benefit of positive patient-provider communication?",
+  choices: [
+    "a. Increases administrative efficiency in dental schools",
+    "b. Leads to higher job satisfaction and greater patient cooperation",
+    "c. Eliminates the need for oral health literacy education",
+    "d. None of the above.",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The Commission on Dental Accreditation (CODA) requires that graduates from dental school programs be competent in which of the following?",
+  choices: [
+    "a. in interpersonal and communication skills to effectively interact with diverse population groups.",
+    "b. in the application of self-assessment skills to prepare them for lifelong learning.",
+    "c. in interpersonal communication and self-assessment skills",
+    "d. a and b are correct",
+    "e. a, b and c are correct"
+  ],
+  correct: 3 // assuming e is correct
+},
+{
+  q: "In the Standardized Patient (SP) part of the DENT 518 & DHYG 252 course, which two skills are being tested?",
+  choices: [
+    "a. Discussing previous treatment and interest in quitting tobacco use.",
+    "b. Taking a medical/dental history and talking about quitting tobacco use.",
+    "c. Discussing treatment planning and diagnostic procedures.",
+    "d. Taking a medical/dental history and discussing treatment planning.",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "When all patients received the same information about periodontal surgery, which factor made them more likely to agree to have the surgery?",
+  choices: [
+    "a. Having less general anxiety.",
+    "b. The kind of surgery suggested (flap or grafting).",
+    "c. Feeling listened to and trusting the dentist.",
+    "d. Their starting gum and bone health levels.",
+    ""
+  ],
+  correct: 2
+},
+      {
+  q: "Oral health is described as existing along a continuum influenced by:",
+  choices: [
+    "A. Insurance coverage",
+    "B. Community water fluoridation",
+    "C. Oral health-related attitudes and behavior",
+    "D. Number of dental visits",
+    "E. a, b, c and d are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Why is OHRQoL important for clinicians?",
+  choices: [
+    "A. It helps them track billing",
+    "B. It focuses attention on the patient, not just the teeth",
+    "C. It replaces clinical exams",
+    "D. It reduces treatment time",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What is one of the most important reasons why patients do not return for a follow-up visit for their child after an emergency dental visit?",
+  choices: [
+    "A. Transportation issues",
+    "B. Scheduling conflicts",
+    "C. Fear of the dentist",
+    "D. A lack of understanding of why they should return.",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which choice is not a part of a patient’s oral health quality of life?",
+  choices: [
+    "A. Functional factors",
+    "B. Insurance factors",
+    "C. Psychological factors",
+    "D. Pain/discomfort",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "A patient with a loose front crown and red gingiva is most likely affected in which OHRQoL domain?",
+  choices: [
+    "A. Functional only",
+    "B. Psychological and social",
+    "C. Pain",
+    "D. None",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What is the first step that should be taken to improve a patient’s oral health and quality of life?",
+  choices: [
+    "A. Help them find better insurance",
+    "B. Treat any psychological conditions that may be impacting their oral health",
+    "C. Whiten their teeth",
+    "D. Get them out of pain if they are experiencing it",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Before 2000, oral health was primarily measured by:",
+  choices: [
+    "A. Quality of life surveys",
+    "B. Patient satisfaction",
+    "C. Oral health-related indicators like caries and periodontal disease",
+    "D. Emotional well-being",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following is a functional item on the MOHRQoL – Child version?",
+  choices: [
+    "A. Do you like your teeth?",
+    "B. Do your teeth hurt when you eat something hot or cold?",
+    "C. Is it hard for you to chew or bite?",
+    "D. Do kids make fun of your teeth?",
+    "E. Are you happy with your smile?"
+  ],
+  correct: 2
+},
+{
+  q: "Which adult OHRQoL item reflects psychological impact?",
+  choices: [
+    "A. My teeth and gums make me concerned about the way I look.",
+    "B. My teeth limit what I eat",
+    "C. My teeth interfere with daily activities",
+    "D. My teeth affect my taste",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which of the following is a functional factor in OHRQoL?",
+  choices: [
+    "A. Chewing and biting",
+    "B. Self-esteem",
+    "C. Appearance concerns",
+    "D. Social interaction",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which of the following is a psychological factor in OHRQoL?",
+  choices: [
+    "A. Ability to chew",
+    "B. Self-esteem and confidence",
+    "C. Oral hygiene frequency",
+    "D. Number of missing teeth",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which adult OHRQoL item reflects social impact?",
+  choices: [
+    "A. My teeth and gums limit the kinds or amounts of food I eat.",
+    "B. My teeth and gums cause discomfort.",
+    "C. My teeth and gums make me uncomfortable when eating in front of others.",
+    "D. My teeth and gums reduce my general happiness with life.",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The Michigan Oral Health–Related Quality of Life Scale (MOHRQoL–C) is used for:",
+  choices: [
+    "A. Children",
+    "B. Couples",
+    "C. Clinicians",
+    "D. none of the above alternatives is correct.",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "The earliest age children can complete the MOHRQoL–C is around:",
+  choices: [
+    "A. 3 years",
+    "B. 5 years",
+    "C. 8 years",
+    "D. 12 years",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The MOHRQoL–C includes questions about oral health-related:",
+  choices: [
+    "A. Pain",
+    "B. Functioning",
+    "C. Self-image",
+    "D. Social experiences",
+    "E. a, b, c and d are correct"
+  ],
+  correct: 4
+},
+{
+  q: "In Filstrup et al. (2003), children with ECC were more likely to report that",
+  choices: [
+    "A. kids made fun of their teeth",
+    "B. their teeth hurt when they eat something sweet.",
+    "C. they wake up at night because of toothache",
+    "D. b and c are correct",
+    "E. a, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Parental proxy OHRQoL assessments typically use:",
+  choices: [
+    "A. Rating or Likert scales",
+    "B. Yes/No responses",
+    "C. Open-ended questions",
+    "D. Dentist observation only",
+    "E. a and b are correct"
+  ],
+  correct: 0
+},
+{
+  q: "In the Flint, MI, study (2004–2006), what percentage of children had decayed teeth in the two years oral exams were conducted?",
+  choices: [
+    "A. 20-25%",
+    "B. 26-30%",
+    "C. 35-45%",
+    "D. 46-60%",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In the Flint, MI, study (2004–2006), what percentage of children reported current tooth pain in 2005/06?",
+  choices: [
+    "A. Under 10%",
+    "B. Between 10-15%",
+    "C. Between 16-20%",
+    "D. Between 21-30%",
+    "E. over 30%"
+  ],
+  correct: 2
+},
+{
+  q: "For adult patients, OHRQoL can be measured using:",
+  choices: [
+    "A. OHIP-14",
+    "B. MOHRQoL–A",
+    "C. MOHRQoL–C",
+    "D. A and b are correct answers",
+    "E. A, b and c are correct answers"
+  ],
+  correct: 3
+},
+{
+  q: "The OHIP-14 is named like this because:",
+  choices: [
+    "A. it has 14 items",
+    "B. it is an abbreviation for Oral Health Impact Profile",
+    "C. it is an abbreviation for Oral Health Importance Profile",
+    "D. a and b are correct",
+    "E. A and c are correct"
+  ],
+  correct: 3
+},
+{
+  q: "Which type of answer scales does the OHIP-14 use?",
+  choices: [
+    "A. True/False answers",
+    "B. Rating scale from 1 = Never to 5 = Very often",
+    "C. 0–10 numeric scale",
+    "D. Visual analog scale",
+    "E. None of the above alternatives is correct."
+  ],
+  correct: 1
+},
+{
+  q: "Overall, patients’ oral health-related quality of life helps dentistry by:",
+  choices: [
+    "A. Making dentists aware of the human and emotional impact of oral health",
+    "B. Bringing patients to the dentist",
+    "C. Helping to communicate the importance of oral health to lay people",
+    "D. a and b are correct",
+    "E. a, b and c are correct"
+  ],
+  correct: 4
+},
+      {
+  q: "A face perceived as attractive",
+  choices: [
+    "a. is likely to be symmetrical.",
+    "b. is likely to have no extreme features",
+    "c. is likely to have no malocclusion",
+    "d. a and c are correct",
+    "e. a, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Research showed that facial attractiveness is a function of:",
+  choices: [
+    "a. what an observer is personally familiar with.",
+    "b. what others tell an observer what is attractive.",
+    "c. What media portray as attractive",
+    "d. A and c are correct",
+    "e. A, b and c are correct."
+  ],
+  correct: 4
+},
+{
+  q: "Adults’ smiling patterns correlate with",
+  choices: [
+    "a. their objectively measured periodontal health,",
+    "b. dentists’ assessments of the patients’ current periodontal health status,",
+    "c. dentists’ assessments of the patients’ treatment outcomes.",
+    "d. the patients’ oral health-related quality of life.",
+    "e. A, b, c and d are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Infant attractiveness influenced parents' ratings of",
+  choices: [
+    "a. how intelligent the baby is.",
+    "b. how likeable the baby is.",
+    "c. how rewarding it is to be with the baby.",
+    "d. b and c are correct",
+    "e. a, b and c are correct."
+  ],
+  correct: 4
+},
+{
+  q: "How does attractiveness affect our lives?",
+  choices: [
+    "a. Other people focus on it from when we are born to when we die",
+    "b. We perceive our own facial attractiveness, and it affects our self-esteem",
+    "c. We perceive our own facial attractiveness, and it affects our behavior",
+    "d. B and c are correct",
+    "e. A, b and c are correct."
+  ],
+  correct: 4
+},
+{
+  q: "What is the general perception of a person with facial attractiveness? The person is",
+  choices: [
+    "a. more intelligent",
+    "b. more ethical",
+    "c. has a more positive personality",
+    "d. a and c are correct",
+    "e. a, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "According to research, how does facial attractiveness affect premature infants’ treatment?",
+  choices: [
+    "a. Attractiveness had no measurable impact on nurses’ behavior",
+    "b. Less attractive infants were predicted to have higher intellectual potential",
+    "c. Nurses’ prognoses of intellectual development were influenced by prematurely born infants’ facial attractiveness",
+    "d. Prematurely born infants’ facial attractiveness did not affect nurses’ behavior",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "How did infant facial attractiveness affect parental perceptions? The more attractive parents rated their infants’ facial attractiveness,",
+  choices: [
+    "a. the more intelligent they rated their infant.",
+    "b. the more likable they rated their infant.",
+    "c. The more rewarding they rated their infant.",
+    "d. A, b and c are not correct.",
+    "e. A, b and c are all correct."
+  ],
+  correct: 4
+},
+{
+  q: "The more teachers perceived their students as having facial attractiveness, the more they perceived them as",
+  choices: [
+    "a. going further in education.",
+    "b. having more supportive parents.",
+    "c. having better peer interactions.",
+    "d. A and c are correct.",
+    "e. A, b and c are correct."
+  ],
+  correct: 4
+},
+{
+  q: "In school settings, which behavior did teachers show toward attractive students?",
+  choices: [
+    "a. Gave more positive verbal feedback",
+    "b. Ignored them more often",
+    "c. Expected lower performance",
+    "d. Discouraged participation",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which statement about attractiveness in adult mating preferences is true?",
+  choices: [
+    "a. Attractiveness of a potential partner is more important for women than for men.",
+    "b. Attractiveness of a potential partner is equally important to both sexes",
+    "c. Attractiveness is the strongest factor in heterosexual mate choice",
+    "d. Attractiveness has no effect on mate selection",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "What factor most strongly influenced heterosexual partner choice?",
+  choices: [
+    "a. Education level",
+    "b. Personality",
+    "c. Physical attractiveness",
+    "d. Financial stability",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Compared to a man, when a woman is missing an incisor, she is perceived as:",
+  choices: [
+    "A. much less attractive",
+    "B. much less intelligent",
+    "C. much less positively in a professional setting",
+    "D. a and b are correct",
+    "E. a, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "According to research, adults’ essays were rated more positively when they were:",
+  choices: [
+    "A. Paired with photos of attractive individuals",
+    "B. Written neatly",
+    "C. Reviewed by peers",
+    "D. Anonymous",
+    "E. None of the above alternatives is correct"
+  ],
+  correct: 0
+},
+{
+  q: "The Olson et al. study showed that malocclusion can negatively affect people’s perceptions of a person’s:",
+  choices: [
+    "A. Attractiveness, intelligence, and personality",
+    "B. Dental health",
+    "C. Social skills",
+    "D. Academic success",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which malocclusion was rated most unattractive?",
+  choices: [
+    "A. Deep bite",
+    "B. Spacing",
+    "C. Missing incisor",
+    "D. Crowding",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Compared to persons with malocclusion, people with normal occlusion were rated more positively in:",
+  choices: [
+    "A. Neuroticism",
+    "B. Extraversion and agreeableness",
+    "C. Lack of openness",
+    "D. None of the above",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which group rated attractive faces more favorably?",
+  choices: [
+    "A. Both providers and patients",
+    "B. Only providers",
+    "C. Only patients",
+    "D. Neither group",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "In healthcare settings, patients’ attractiveness",
+  choices: [
+    "a. affects affliction assignment/diagnosis.",
+    "b. affects predication of positive treatment outcomes.",
+    "c. affects evaluations of having a greater probability of psychological problems.",
+    "d. does not affect healthcare providers’ treatment of patients.",
+    "e. a, b, and c are correct."
+  ],
+  correct: 4
+},
+{
+  q: "The “average of 40 faces” concept demonstrates:",
+  choices: [
+    "A. Cosmetic surgery standards",
+    "B. Facial asymmetry",
+    "C. Averageness is perceived as attractive",
+    "D. Facial complexity preference",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "A major takeaway from the lecture was that attractiveness:",
+  choices: [
+    "A. Matters in healthcare and patient interactions",
+    "B. Is irrelevant to professional practice",
+    "C. Only affects social life",
+    "D. Is purely biological",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which factor influences how people judge attractiveness across cultures?",
+  choices: [
+    "A. Media and cultural standards",
+    "B. Age",
+    "C. Profession",
+    "D. Religion",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "The study by Olsen and Inglehart (2011) focused on:",
+  choices: [
+    "A. Caries prevention",
+    "B. Malocclusions and social perceptions",
+    "C. Periodontal therapy",
+    "D. Oral cancer awareness",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "According to the lecture, dental professionals’ own attractiveness:",
+  choices: [
+    "A. Has no effect on patients",
+    "B. Can influence how patients perceive them",
+    "C. Decreases trust",
+    "D. Increases appointment cancellations",
+    ""
+  ],
+  correct: 1
+},
+     {
+  q: "What are three major challenges in your professional life?",
+  choices: [
+    "a. Patients’ fear, pain, time",
+    "b. weather, fear, time",
+    "c. cost, fear, pain",
+    "d. Cost, time, weather",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "What is a possible role of pain in our professional life?",
+  choices: [
+    "a. Patients come to you for help",
+    "b. Pain scares patients and they stay away from you",
+    "c. Some patients live in pain because they cannot afford to come to you",
+    "d. all of the above",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "What are the 5 parameters of pain?",
+  choices: [
+    "a. Cognitive, sensory , affective , social and history",
+    "b. Social ,mental , behavioral , sensory and affective",
+    "c. Cognitive, sensory, affective, behavioral and history",
+    "d. History, mental, behavioral, cognitive and affective",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Phantom limb pain demonstrates that:",
+  choices: [
+    "A. Pain is always caused by tissue damage",
+    "B. Pain can exist without physical injury",
+    "C. Pain is an illusion",
+    "D. Pain only occurs in the brain",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "According to Beecher’s WWII observations, soldiers needed less anesthesia because:",
+  choices: [
+    "A. They were healthier",
+    "B. They were used to pain",
+    "C. The meaning and context of pain affected their perception",
+    "D. They were given stronger medications",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Limitations to the traditional model of pain is/are:",
+  choices: [
+    "a. The level of pain is not always proportional to tissue damage.",
+    "b. Even after tissue damage is corrected, pain can persist.",
+    "c. Psychological & social factors affect pain.",
+    "d. a and c are correct",
+    "e. a, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "The “modern“ definition of pain was developed in the 1970s. It includes:",
+  choices: [
+    "A. Physical and mechanical components",
+    "B. Sensory and emotional experiences",
+    "C. Psychological and imaginary factors",
+    "D. Physical and spiritual sensations",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "According to the biopsychosocial model, pain is:",
+  choices: [
+    "A. A sensory reaction only",
+    "B. A result of the interaction of biological, psychological, and social factors",
+    "C. Caused solely by nerve damage",
+    "D. Easy to eliminate",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The clinical definition of pain is:",
+  choices: [
+    "A. Pain that lasts more than 6 months",
+    "B. Whatever the patient says it is",
+    "C. Pain caused by inflammation",
+    "D. Pain rated as “moderate” or higher",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Acute pain is:",
+  choices: [
+    "A. Short-term and adaptive",
+    "B. Chronic and severe",
+    "C. Not treatable",
+    "D. Mainly psychological",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Pre-chronic pain refers to:",
+  choices: [
+    "A. Untreatable pain",
+    "B. Pain that occurs between acute and chronic stages",
+    "C. Pain that occurs after six months",
+    "D. Pain caused by medication",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Chronic pain typically lasts for:",
+  choices: [
+    "A. A few days",
+    "B. Six months or longer",
+    "C. One week",
+    "D. One month",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which of the following is not a parameter of pain?",
+  choices: [
+    "A. Cognitive",
+    "B. Nutritional",
+    "C. Sensory",
+    "D. Behavioral",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which theory believed pain is proportional to tissue damage?",
+  choices: [
+    "A. Biopsychosocial model",
+    "B. Behavioral model",
+    "C. The traditional model developed before 1950",
+    "D. Phantom theory",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The biopsychosocial model was formally introduced by:",
+  choices: [
+    "A. Beecher",
+    "B. Engel (1977)",
+    "C. Melzack",
+    "D. Sanders",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The McGill Pain Questionnaire (MPQ) was developed by:",
+  choices: [
+    "A. Melzack and Torgerson (1975)",
+    "B. Beecher and Engel",
+    "C. Sanders and Woolf",
+    "D. Freud and Jung",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "The McGill Pain Questionnaire categorizes pain into which three dimensions?",
+  choices: [
+    "A. Physical, emotional, behavioral",
+    "B. Sensory, affective, and evaluative",
+    "C. Acute, chronic, pre-chronic",
+    "D. Organic, psychogenic, cognitive",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The Present Pain Intensity (PPI) score on the McGill Pain Questionnaire ranges from:",
+  choices: [
+    "A. 0–50",
+    "B. 1–10",
+    "C. Mild to excruciating (5-point scale)",
+    "D. 1–100 numeric scale",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which tool uses a straight line for patients to mark their pain level?",
+  choices: [
+    "A. Numerical scale",
+    "B. Visual Analogue Scale (VAS)",
+    "C. Questionnaire",
+    "D. Behavioral observation",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which method is not a way to assess pain?",
+  choices: [
+    "A. Verbal report",
+    "B. Behavioral observation",
+    "C. Psychophysiological measure",
+    "D. Radiographic imaging",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which is an example of a psychophysiological measure?",
+  choices: [
+    "A. Clinical interview",
+    "B. Muscle tension (EMG)",
+    "C. Visual scale",
+    "D. Questionnaire",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which statement best describes how people express pain?",
+  choices: [
+    "A. Cultural norms and upbringing influence how pain is expressed",
+    "B. Everyone shows pain the same way",
+    "C. Pain expression is purely biological",
+    "D. Gender determines pain behavior",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "How do dental professionals often misjudge patient pain?",
+  choices: [
+    "A. They overestimate it",
+    "B. They underestimate it",
+    "C. They assume all patients feel the same",
+    "D. They ignore it completely",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which study found that orthodontists underestimated adolescent patients’ pain?",
+  choices: [
+    "A. Beecher’s WWII study",
+    "B. Krukemeyer, Arruda, & Inglehart (2009)",
+    "C. Melzack and Torgerson (1975)",
+    "D. Engel (1977)",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What percentage of patients in the orthodontic pain study reported pain for a few days after their appointment?",
+  choices: [
+    "A. 25%",
+    "B. 40%",
+    "C. 58.5%",
+    "D. 75%",
+    ""
+  ],
+  correct: 2
+},
+      {
+  q: "Why do we have a class on dental fear?",
+  choices: [
+    "a. Fear is one of your three obstacles that keeps patients from coming to you",
+    "b. You can make your patient more comfortable, if you understand how fear “works”.",
+    "c. If patients are less anxious, they accept treatment better.",
+    "d. a, b and c are correct",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "How does dental fear/anxiety affect your work?",
+  choices: [
+    "a. Children with dental fear might provide more challenges for behavior management.",
+    "b. Patients with dental fear/anxiety, do not show up / miss appointments.",
+    "c. Patients with dental fear/anxiety might reschedule frequently.",
+    "d. a, b and c are correct.",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which of the following statements is FALSE? Emotions are:",
+  choices: [
+    "a. involuntary / automatic: “they happen to us”.",
+    "b. They distract us and do not help us organize our experiences.",
+    "c. directing and sustaining behavior.",
+    "d. are universal.",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "__________ is a more general response to less well-defined dental stimuli.",
+  choices: [
+    "a. Dental fear",
+    "b. Dental anxiety",
+    "c. Phobia",
+    "d. None of the above is a correct answer",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Children in the dental setting are most afraid of _______.",
+  choices: [
+    "a. Shots",
+    "b. Seeing drill",
+    "c. Choking",
+    "d. Instruments",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Adults in the dental setting are most afraid of _________.",
+  choices: [
+    "a. Choking",
+    "b. Hearing the drill",
+    "c. Waiting room",
+    "d. Feeling the needle",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "All of the following alternatives are person-related characteristics of dental anxiety/fear except _____",
+  choices: [
+    "a. Demographic characteristics",
+    "b. Oral health-related characteristics",
+    "c. Personality/personal styles",
+    "d. Diet",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: 'In the lecture, you learned about the equation “Pain = f (Person, Situation, Person x situation). Which of the following were NOT discussed as person factors?',
+  choices: [
+    "a. demographic factors",
+    "b. personality factors",
+    "c. prior negative experiences",
+    "d. what others told you about dental visits",
+    "e. all of the above are correct answers"
+  ],
+  correct: 4
+},
+{
+  q: "Consequences of dental fear include all of the following except _____",
+  choices: [
+    "a. No shows",
+    "b. Missing appointments",
+    "c. Consistent attendance",
+    "d. Children acting up",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In the September 2025 issue of JADA, an article was published entitled “ A census-matched survey...The authors found that the prevalence of moderate and severe pain among the US population was:",
+  choices: [
+    "a. Approximately 15% moderate fear & 6% severe fear.",
+    "b. Approximately 25% moderate fear & 15% severe fear.",
+    "c. Approximately 45% moderate fear & 27% severe fear.",
+    "d. Approximately 52% moderate fear & 32% severe fear.",
+    ""
+  ],
+  correct: 2 // Adjust to match the actual study
+},
+{
+  q: 'One way dental fear is “learned” is via classical conditioning. Which of the following is a good description of how classical conditioning works?',
+  choices: [
+    "a. When a neutral stimulus such as a visit to the dentist is associated with a negative stimulus such as pain during dental treatment, the neutral stimulus (= dental visit) becomes a negative stimulus that evokes fear.",
+    "b. When a person is generally anxious, then a visit to the dentist is likely to be also met with anxiety.",
+    "c. Pain during dental treatment leads to fear of the dentist.",
+    "d. None of the above descriptions is correct.",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "What are negative consequences of dental fear for your patients? Dental fear is negatively correlated with",
+  choices: [
+    "a. regular utilization of dental services: your patients don’t come to you.",
+    "b. oral health.",
+    "c. oral health-related quality of life.",
+    "d. a and c are correct.",
+    "e. a, b and c are correct."
+  ],
+  correct: 4
+},
+{
+  q: "Which of the following characteristics do NOT describe dental phobia? Dental phobia is",
+  choices: [
+    "a. a persistent / ongoing fear.",
+    "b. a very rare problem with less than 2% of the US population having dental phobias.",
+    "c. a fear of specific objects and situations.",
+    "d. a very strong / immense fear.",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What should you not do with a fearful child?",
+  choices: [
+    "a. Praise all cooperative behavior",
+    "b. Don’t think it is a battle that you have to win",
+    "c. Avoid belittlement, coercion",
+    "d. Use elaborate explanations",
+    "e. Express concern"
+  ],
+  correct: 3
+},
+{
+  q: "According to Milgrom, there are five groups of patients likely to show severe dental anxiety/fear. Which of the following is NOT correct?",
+  choices: [
+    "a. Patients who fear a procedure.",
+    "b. Patients who do not trust you",
+    "c. Older adults",
+    "d. Patients with generalized anxiety",
+    "e. Children"
+  ],
+  correct: 2
+},
+{
+  q: "The following are adult patients’ top five dental related fears except",
+  choices: [
+    "a. Feeling the needle",
+    "b. Seeing the needle",
+    "c. Choking",
+    "d. Hearing the drill",
+    "e. Feeling the drill"
+  ],
+  correct: 2
+},
+{
+  q: "Which is the following is False about emotions?",
+  choices: [
+    "a. Emotions arouse us and can involve our body's reaction",
+    "b. Emotions help us organize our experiences.",
+    "c. Emotions are voluntary",
+    "d. Emotions help us with communication",
+    "e. Emotions are universal"
+  ],
+  correct: 2
+},
+{
+  q: "What is the definition of dental fear? Dental fear is",
+  choices: [
+    "a. a general response to a less well defined stimuli",
+    "b. a marked and persistent fear of clearly discernible and circumscribed objects and situations.",
+    "c. The fear of specific stimuli related to dental treatment.",
+    "d. A fear of teeth",
+    "e. None of the above"
+  ],
+  correct: 2
+},
+{
+  q: "Which person-related characteristic is not associated with dental fear and dental anxiety?",
+  choices: [
+    "a. Demographic characteristics",
+    "b. Mental health status",
+    "c. Personality",
+    "d. IQ",
+    "e. OHRQoL"
+  ],
+  correct: 3
+},
+{
+  q: "Dental anxiety is:",
+  choices: [
+    "A. A reaction to one specific dental stimulus",
+    "B. A general response to less-defined dental stimuli",
+    "C. The same as dental fear",
+    "D. Always pathological",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Phobia is:",
+  choices: [
+    "A. A mild concern",
+    "B. An occasional fear",
+    "C. A marked and persistent fear of specific, discernible objects or situations",
+    "D. A type of stress",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Consequences of dental fear include all EXCEPT:",
+  choices: [
+    "A. No-shows",
+    "B. Missed appointments",
+    "C. Children acting up",
+    "D. Consistent attendance",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Dental fear is negatively correlated with:",
+  choices: [
+    "A. Regular utilization of dental services",
+    "B. Tooth eruption",
+    "C. Caffeine intake",
+    "D. Patient compliance",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which of the following 4 groups shows the highest dental fear prevalence?",
+  choices: [
+    "A. Sweden",
+    "B. Australia",
+    "C. Iceland (10%)",
+    "D. Appalachia, West",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "According to U.S. data (Heyman et al., 2025), dental fear prevalence was:",
+  choices: [
+    "A. 22.4%",
+    "B. 38.9%",
+    "C. 52.3%",
+    "D. 72.6%",
+    ""
+  ],
+  correct: 3 // Adjust per your source
+},
+      {
+  q: "In the study discussed in class about the role of mothers in preventing oral disease in their children, what were mothers least knowledgeable in?",
+  choices: [
+    "a. At what age children should have their teeth brushed",
+    "b. That children should not suck on a bottle/pacifier when falling asleep",
+    "c. At what age a child should start seeing the dentist",
+    "d. A and c are alternatives that mothers were least knowledgeable about",
+    "e. A, b and c are alternatives that mothers were least knowledgeable about"
+  ],
+  correct: 3
+},
+{
+  q: "Aristotle said humans are:",
+  choices: [
+    "a. Rational animals",
+    "b. Social animals",
+    "c. Isolated creatures",
+    "d. Predatory beings",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Cobb (1976) defined social support as:",
+  choices: [
+    "A. Social support is information that leads a person to believe that he / she is cared for and loved, esteemed, and valued.",
+    "B. Social support is information that leads a person to believe that he / she belongs to a network of communication.",
+    "C. Social support is information that leads a person to believe that he / she belongs to a network of communication and mutual obligations.",
+    "D. a and b combined are correct",
+    "E. a and c combined are correct."
+  ],
+  correct: 4
+},
+{
+  q: "House (1981) listed which four forms of support?",
+  choices: [
+    "a. Instrumental, informational, emotional, appraisal",
+    "b. Social, emotional, financial, physical",
+    "c. Individual, social, professional, academic",
+    "d. Direct, indirect, active, passive",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Ventilation in social support means:",
+  choices: [
+    "A. Getting medical help",
+    "B. Expressing feelings",
+    "C. Giving advice",
+    "D. Avoiding problems",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Validation in social support means:",
+  choices: [
+    "A. Agreeing with others",
+    "B. Sharing feelings",
+    "C. Having your feelings acknowledged as reasonable",
+    "D. Listening to others",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Giving social support can:",
+  choices: [
+    "A. Lower self-esteem",
+    "B. Increase self-esteem and emotional bonds",
+    "C. Emotionally drain a person",
+    "D. Cause isolation",
+    "E. b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Receiving social support can:",
+  choices: [
+    "A. Lower stress levels",
+    "B. Lower self esteem",
+    "C. Decrease motivation",
+    "D. Create conflict",
+    "E. a and b are correct"
+  ],
+  correct: 4
+},
+{
+  q: "The macro level of social factors includes:",
+  choices: [
+    "A. Oral health disparities and socioeconomic differences",
+    "B. Peer support",
+    "C. Family structure",
+    "D. Daily coping skills",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "The micro level focuses on:",
+  choices: [
+    "A. Nations",
+    "B. Populations",
+    "C. Family and close relationships",
+    "D. Cultural trends",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The family plays a major role in:",
+  choices: [
+    "A. Preventing oral disease",
+    "B. Promoting good oral health and establishing good habits",
+    "C. Increasing health care utilization",
+    "D. a and b are correct",
+    "E. a, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Mothers with more education tend to:",
+  choices: [
+    "A. Know more about consequences of poor oral health",
+    "B. Have less oral health knowledge",
+    "C. Avoid dental care for their child",
+    "D. Delay children’s dental visits",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Parents with higher income:",
+  choices: [
+    "A. knew more about oral health utilization",
+    "B. knew more about oral health-related behavior",
+    "C. were less involved in their child’s dental care utilization",
+    "D. a and b are correct",
+    "E. a and b and c are correct"
+  ],
+  correct: 3
+},
+{
+  q: "The more children a mother has, the more she tends to:",
+  choices: [
+    "A. Know about preventing oral health problems",
+    "B. Avoid appointments",
+    "C. Experience dental fear",
+    "D. Ignore hygiene",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Parental fatalism is associated with:",
+  choices: [
+    "A. Higher risk of early childhood caries (ECC)",
+    "B. Lower ECC risk",
+    "C. More frequent brushing",
+    "D. Higher education",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Parents’ dental fear is associated with:",
+  choices: [
+    "A. Lower likelihood of taking children to the dentist",
+    "B. More preventive care for their child",
+    "C. Greater oral health literacy",
+    "D. Higher self-efficacy",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "REALD-30 assesses:",
+  choices: [
+    "A. Oral health literacy",
+    "B. Dental fear",
+    "C. Parental control",
+    "D. Family income",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Higher oral health literacy correlates with:",
+  choices: [
+    "A. Better parental oral health and child outcomes",
+    "B. More fear",
+    "C. Poorer oral hygiene",
+    "D. Less awareness",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Parents prefer which dental office environment feature most?",
+  choices: [
+    "A. Children’s books/magazines in waiting area",
+    "B. A special waiting area for children",
+    "C. Children see movies while they are being treated",
+    "D. Voice control",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Parents disliked most:",
+  choices: [
+    "A. Nitrous oxide use",
+    "B. General anesthesia",
+    "C. Hand-over-mouth technique",
+    "D. Tell-show-do",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Family’s role in preventing oral disease can be:",
+  choices: [
+    "A. Direct by taking child to dentist",
+    "B. Indirect by providing a healthy diet",
+    "C. Direct by educating the child about oral hygiene",
+    "D. a and c are correct",
+    "E. a and b and c are correct"
+  ],
+  correct: 4
+},
+      {
+  q: "What is rapport?",
+  choices: [
+    "a. a sense of understanding where another person is coming from",
+    "b. a relation marked by harmony, conformity, accord, or affinity",
+    "c. Being yourself in a professional setting",
+    "d. Using a script to talk with patients",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "All are outcomes of establishing good rapport EXCEPT",
+  choices: [
+    "a. reduce anxiety",
+    "b. increase patient satisfaction",
+    "c. decrease the likelihood the patient will return",
+    "d. increase the clinician’s satisfaction",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "All are aspects of empathy EXCEPT",
+  choices: [
+    "a. being able to walk in another person's shoes",
+    "b. recognizing and being aware of emotion",
+    "c. dismissing concerns",
+    "d. offering support",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following alternatives is NOT a nonverbal aspect of rapport?",
+  choices: [
+    "a. posture",
+    "b. making eye contact",
+    "c. interrupting",
+    "d. smiling",
+    "e. nodding while the patient is talking"
+  ],
+  correct: 2
+},
+{
+  q: "Which is the incorrect pairing of the steps to verbally establish rapport at the beginning of a dental visit?",
+  choices: [
+    "a. Step 1: welcome the patient",
+    "b. Step 2: introductions",
+    "c. Step 3: gather all information",
+    "d. Step 4: agree upon agenda for visit",
+    "e. All of the above are correct pairings."
+  ],
+  correct: 4
+},
+{
+  q: "Genuineness means:",
+  choices: [
+    "A. Being authentic yet professional",
+    "B. Over-sharing personal details",
+    "C. Being detached",
+    "D. Using humor to deflect emotions",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Openness means:",
+  choices: [
+    "A. Being willing to listen and adapt",
+    "B. Sticking to a script",
+    "C. Avoiding eye contact",
+    "D. Limiting conversation",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "According to Carl Rogers, the 3 key traits are:",
+  choices: [
+    "A. Empathy, genuineness, openness",
+    "B. Empathy, confidence, openness",
+    "C. Patience, punctuality, openness",
+    "D. Formality, authority, empathy",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "The OARS acronym includes all EXCEPT:",
+  choices: [
+    "A. Open-ended questions",
+    "B. Affirmation",
+    "C. Reflective listening",
+    "D. Surveying information",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "The “A” in OARS stands for:",
+  choices: [
+    "A. Affirmation",
+    "B. Accuracy",
+    "C. Agreement",
+    "D. Attention",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Rapport is improved when the patient feels:",
+  choices: [
+    "A. Understood",
+    "B. Listened to",
+    "C. Trusted",
+    "D. a and b are correct",
+    "E. a, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Empathy improves clinical outcomes by:",
+  choices: [
+    "A. Reducing anxiety and improving cooperation",
+    "B. Extending appointment times",
+    "C. Increasing paperwork",
+    "D. Limiting emotional expression",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Genuineness requires:",
+  choices: [
+    "A. Self-awareness and professional boundaries",
+    "B. Pretending to relate",
+    "C. Avoiding emotions",
+    "D. taking more time",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "The outcome of good rapport includes:",
+  choices: [
+    "A. Decreased patient satisfaction",
+    "B. More accurate diagnosis and cooperation",
+    "C. Longer appointments",
+    "D. Less trust",
+    "E. b and c are correct"
+  ],
+  correct: 1
+},
+{
+  q: "During introductions, you should:",
+  choices: [
+    "A. Ask what name the patient prefers",
+    "B. Skip using the patient’s name",
+    "C. Use the patient’s last name",
+    "D. Use the patient’s first name",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Nonverbal communication accounts for roughly:",
+  choices: [
+    "A. 10% of the communication with the patients",
+    "B. 25% of the communication with the patients",
+    "C. A major portion of the communication with the patient",
+    "D. very little of the communication with the patient",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Reflective listening involves:",
+  choices: [
+    "A. Reflecting back what the patient says",
+    "B. Correcting the patient’s point of view",
+    "C. Listening more than talking",
+    "D. Focusing on the collected information",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Rapport can help prevent:",
+  choices: [
+    "A. Dental fear and anxiety",
+    "B. Cavities",
+    "C. Tooth decay",
+    "D. Scheduling errors",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "A patient-centered approach focuses on:",
+  choices: [
+    "A. The patient’s perspective and comfort",
+    "B. The provider’s routine",
+    "C. Time efficiency",
+    "D. Institutional rules",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Effective rapport increases:",
+  choices: [
+    "A. Defensive behavior",
+    "B. Noncompliance",
+    "C. Patient satisfaction",
+    "D. Miscommunication",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which is NOT a component of rapport?",
+  choices: [
+    "A. Trust",
+    "B. Understanding",
+    "C. Mutual respect",
+    "D. Authority",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Building rapport should start:",
+  choices: [
+    "A. At the beginning of the first patient interaction",
+    "B. During the first visit",
+    "C. When taking the medical/dental history",
+    "D. When discussing the chief concernAt the next visit",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "A provider using humor in response to a patient’s dental fear is using:",
+  choices: [
+    "A. A defense mechanism",
+    "B. Humor to help the patient relax",
+    "C. Humor to distract the patient",
+    "D. Reflective listening",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which communication technique does NOT support establishing rapport?",
+  choices: [
+    "A. Summarizing what was discussed",
+    "B. Listening to the patient",
+    "C. Ignoring the patient’s emotion",
+    "D. Smiling",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The ultimate result of rapport is:",
+  choices: [
+    "A. Mutual trust, understanding, and effective care",
+    "B. Faster appointments",
+    "C. Reduced paperwork",
+    "D. Professional distance",
+    ""
+  ],
+  correct: 0
+},
+      {
+  q: "According to Hovland’s Yale persuasion studies, which factor is not part of the communication model?",
+  choices: [
+    "A. Who says it",
+    "B. How it is said",
+    "C. To whom it is said",
+    "D. Where it is said",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "When collecting a medical/dental history, the first step in the interview is:",
+  choices: [
+    "A. Establishing expectations",
+    "B. Confirming the patient’s chief concern",
+    "C. Welcoming and introducing yourself",
+    "D. Reviewing past history",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following is a provider-caused problem in verbal communication?",
+  choices: [
+    "A. Patient anxiety",
+    "B. Low health literacy",
+    "C. Use of jargon such as “third molar”",
+    "D. Prior negative dental experiences",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Carl Rogers’ concept of facilitative listening emphasizes all of the following except:",
+  choices: [
+    "A. Encouraging full communication",
+    "B. Avoiding negative non-verbal cues",
+    "C. Interrupting when the patient hesitates",
+    "D. Listening without impatience",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "What is the main goal of reflective responding?",
+  choices: [
+    "A. To confirm closed-ended questions",
+    "B. To acknowledge feelings and show understanding",
+    "C. To direct the conversation toward treatment",
+    "D. To shorten the interview process",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which outcome is not a benefit of effective listening and communication with patients?",
+  choices: [
+    "A. More accurate diagnosis",
+    "B. Increased likelihood of cooperation",
+    "C. Establishing rapport and reducing anxiety",
+    "D. Decreasing the amount of information collected",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Open-ended questions in patient interviews are primarily used to:",
+  choices: [
+    "A. Confirm details already gathered",
+    "B. Explore the patient’s concerns more fully",
+    "C. Save time during history taking",
+    "D. Replace the standardized health history form",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which of the following is not an objective of history taking?",
+  choices: [
+    "A. Establish rapport with the patient",
+    "B. Ensure necessary medical information is obtained",
+    "C. Agree with the patient on an agenda",
+    "D. Make a treatment decision",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which of the following is an interactive aspect that improves communication with patients?",
+  choices: [
+    "A. Acting as the boss in the conversation",
+    "B. Showing empathy and genuine interest",
+    "C. Delivering information without feedback",
+    "D. Using only written materials",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "According to the lecture, repeating what a patient says before responding helps to:",
+  choices: [
+    "A. Speed up the interview",
+    "B. Reduce emotion and foster rational discussion",
+    "C. Prove that the provider is always correct",
+    "D. Avoid discussing sensitive issues",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which of the following does not occur when we repeat what others say before we present our point of view?",
+  choices: [
+    "a. We listen",
+    "b. We understand",
+    "c. We get more emotional and less rational",
+    "d. We get less emotional and more rational",
+    "e. We are more likely to compromise."
+  ],
+  correct: 2
+},
+{
+  q: "All of the following are related to lower health literacy except...",
+  choices: [
+    "a. Lower knowledge about oral health related issues",
+    "b. Less dental fear",
+    "c. Poor oral health behavior",
+    "d. Fewer Dental visits",
+    "e. Lower likelihood to seek dental care for children but"
+  ],
+  correct: 1
+},
+{
+  q: "During the closing phase of the interview, the provider should primarily:",
+  choices: [
+    "A. Prepare for calling the instructor",
+    "B. Confirm expectations and summarize what happens next",
+    "C. Discuss the chief concern",
+    "D. Summarize the entire past medical history",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "In the FORMAT sequence, which step directly follows “Opening: What can I do for you? (Chief Concern)”?",
+  choices: [
+    "A. Data Gathering",
+    "B. Collect information",
+    "C. Establish Expectations",
+    "D. History Form Review",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "When using open-ended vs. closed-ended questions, the lecture recommends using open-ended questions to __ and closed-ended questions to __.",
+  choices: [
+    "A. Confirm; explore",
+    "B. Explore; confirm",
+    "C. Diagnose; treat",
+    "D. Reassure; summarize",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which channel is listed as the most successful under “How #1” as a way information can be communicated?",
+  choices: [
+    "A. Instant messaging apps only",
+    "B. Telephone communication",
+    "C. Social media only",
+    "D. Face to face",
+    "E. Websites/mass media"
+  ],
+  correct: 3
+},
+{
+  q: "Under “How #2,” which behaviors are BEST reflecting the provider’s role?",
+  choices: [
+    "A. Explaining what will happen during the appointment",
+    "B. Being a partner",
+    "C. Showing empathy",
+    "D. Increasing the patient’s self-efficacy",
+    "E. A, b, c and d are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Collecting patient information should be viewed as:",
+  choices: [
+    "A. A one-time data capture when taking a medical/dental history",
+    "B. An ongoing story throughout the appointment",
+    "C. Having little clinical relevance",
+    "D. A substitute for an oral exam",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which is NOT a provider-caused problem in verbal communication?",
+  choices: [
+    "A. Jargon (e.g., “abscess,” “third molar”)",
+    "B. Complex language",
+    "C. Depersonalization",
+    "D. Provider age",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "The objectives of history taking include all of the following EXCEPT:",
+  choices: [
+    "A. Establish rapport and get to know your patient",
+    "B. Ensure you have the information needed to treat and know expectations",
+    "C. Agree on an agenda and summarize next steps",
+    "D. Make treatment decisions before discussing expectations",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which technique belongs to the “open-ended funnel”/interviewing toolbox?",
+  choices: [
+    "A. Summation",
+    "B. Interrupting to stay on schedule",
+    "C. Leading questions to confirm a bias",
+    "D. Minimizing emotions to move on",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "A reflective response should primarily:",
+  choices: [
+    "A. Correct inaccurate beliefs directly and quickly",
+    "B. Acknowledge contributions/feelings and show understanding",
+    "C. Shift to written instructions to avoid conflict",
+    "D. Provide reassurance by saying “don’t worry”",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "One listed outcome of good communication is:",
+  choices: [
+    "A. Increased patient and provider satisfaction",
+    "B. Decreased need for rapport",
+    "C. Faster visits with less information",
+    "D. Reduced likelihood of cooperation",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "In data gathering, which body language cue was specifically emphasized?",
+  choices: [
+    "A. Avoid eye contact to reduce pressure",
+    "B. Sit behind a computer to focus",
+    "C. Maintain eye contact and orient your body toward the patient",
+    "D. Cross arms to signal authority",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Patient interviews include:",
+  choices: [
+    "A. Welcome/introductions",
+    "B. Chief concern",
+    "C. Present problem discussion",
+    "D. Special conditions",
+    "E. a, b, c and d are correct"
+  ],
+  correct: 4
+},
+      {
+  q: "What percentage of adults in the dental clinic are aware of what the word caries means?",
+  choices: [
+    "A. 43%",
+    "B. 56%",
+    "C. 74%",
+    "D. 81%",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "What is the negative effect that low literacy can have on your patients' health?",
+  choices: [
+    "A. Underutilize health resources",
+    "B. More dental fear",
+    "C. Engage in unhealthy behavior",
+    "D. All of the above",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which of the following is NOT a way to engage with a low literacy patient?",
+  choices: [
+    "A. Slow down",
+    "B. Use pictures",
+    "C. Only have the hygienist talk to the patient",
+    "D. Limit amount of information and repeat it",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "What percentage of US adults had a proficient state of health literacy?",
+  choices: [
+    "A. 46%",
+    "B. 73%",
+    "C. 12%",
+    "D. 85%",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which is Level 1 of the literary levels?",
+  choices: [
+    "A. High-level literacy",
+    "B. Functionally literate",
+    "C. Low functionally literacy",
+    "D. Marginally literate",
+    "E. Functionally illiterate"
+  ],
+  correct: 4
+},
+{
+  q: "Compared to adults with higher levels of oral health literacy, adults with lower health literacy are",
+  choices: [
+    "A. up to 2x more likely to encounter poorer health and have higher rates of chronic diseases.",
+    "B. up to 3x more likely to encounter poorer health and have higher rates of chronic diseases.",
+    "C. up to 4x more likely to encounter poorer health and have higher rates of chronic diseases.",
+    "D. There is no difference .",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What is considered the most important tool in dentistry?",
+  choices: [
+    "A. The dental chair",
+    "B. Spoken words (verbal communication)",
+    "C. Digital X-rays",
+    "D. Toothbrushes",
+    "E. None of the above is correct."
+  ],
+  correct: 1
+},
+{
+  q: "What does oral health literacy mean? Health literacy is the",
+  choices: [
+    "A. Ability to clean teeth",
+    "B. Ability to read oral health information",
+    "C. Ability to read, understand and use oral health information",
+    "D. Ability to make appropriate healthcare decisions and follow instructions for treatment.",
+    "E. C and d are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Which of the following is not a consequence of low oral health literacy?",
+  choices: [
+    "A. Low rapport",
+    "B. Poor hygiene",
+    "C. Higher dental understanding",
+    "D. Missed appointments",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which group had the highest percentage of not functionally literate persons?",
+  choices: [
+    "A. 9-12",
+    "B. 16-54",
+    "C. 55-65",
+    "D. 65+",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which is an effective way to improve communications with patients?",
+  choices: [
+    "A. Use complex terminology",
+    "B. Speak quickly",
+    "C. Use plain language",
+    "D. Provide all information at once",
+    "E. Provide all information in writing"
+  ],
+  correct: 2
+},
+{
+  q: "Thinking about the levels of literacy, which description matches Level 1?",
+  choices: [
+    "A. Functionally literate",
+    "B. High-level literacy",
+    "C. Marginally literate",
+    "D. Functionally illiterate",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which behavior may indicate limited literacy in a dental setting?",
+  choices: [
+    "A. Bringing written questions to the visit",
+    "B. Accurately listing medications and doses",
+    "C. Frequently missed appointments",
+    "D. Asking for more scientific details",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which patient response can hint at limited literacy when given written material?",
+  choices: [
+    "A. “Could you give me the primary literature?”",
+    "B. “I forgot my glasses–can you read this to me?”",
+    "C. “Do you have this in (another language)?”",
+    "D. “Can I email you my questions later?”",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "26% of patients:",
+  choices: [
+    "A. Can’t identify their prescribed mouthrinse",
+    "B. Do not understand when the next appointment is scheduled",
+    "C. Misinterpret radiographic findings",
+    "D. Fail to recognize the clinic’s address",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "86% of patients cannot understand which part of the Medicaid application?",
+  choices: [
+    "A. Income verification section",
+    "B. Provider directory",
+    "C. Rights and responsibilities section",
+    "D. Dental benefits summary",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The teach-back technique asks patients to:",
+  choices: [
+    "A. Sign a literacy attestation",
+    "B. Explain and/or demonstrate how they will carry out instructions",
+    "C. Watch a video and take a quiz",
+    "D. Confirm understanding with “yes/no”",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "A patient-friendly front desk procedure from the checklist is to:",
+  choices: [
+    "A. Use voicemail to triage all calls",
+    "B. Collect full social history before check-in",
+    "C. Have a person (not a machine) answer the phone",
+    "D. Require online forms only",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "An item on the patient understanding checklist at the end of the visit is:",
+  choices: [
+    "A. “What is your insurance group number?”",
+    "B. “What oral health problems do I have?”",
+    "C. “When do I need to be seen again?”",
+    "D. “What is my clinic’s annual budget?”",
+    "E. B and c are correct."
+  ],
+  correct: 4
+},
+{
+  q: "Immigrants arriving after age 12 have a not functionally literate rate of:",
+  choices: [
+    "A. <10%",
+    "B. 25%",
+    "C. 35%",
+    "D. >50%",
+    "E. 90%"
+  ],
+  correct: 3
+},
+{
+  q: "For communicating with children, which rephrasing is most appropriate for explaining a pre-procedural step?",
+  choices: [
+    "A. Injection -> \"brief needle insertion”",
+    "B. Rubber dam -> “isolation device”",
+    "C. Give injection -> “squirt some sleepy juice next to your tooth”",
+    "D. sealant -> “We paint something on your tooth to make your tooth smooth and strong,”",
+    "E. c and d are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Which step in the six steps to improve interpersonal communication specifically emphasize making patients comfortable asking questions and, when helpful, involving family or friends?",
+  choices: [
+    "A. Use plain, nonmedical language",
+    "B. Limit the amount of information and repeat it",
+    "C. Show or draw pictures",
+    "",
+    ""
+  ],
+  correct: 1
+},
+      {
+  q: "What are the two most prevalent oral diseases mentioned, both of which are largely preventable?",
+  choices: [
+    "a. Dental fear and TMJ disorder",
+    "b. Bruxism and xerostomia",
+    "c. Caries and periodontal disease",
+    "d. Oral cancer and infections",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "One reason listed for the lack of progress in preventing prevalent oral diseases is the use of a \"generic\" approach instead of a:",
+  choices: [
+    "a. Patient specific / tailored approach",
+    "b. High-tech approach",
+    "c. Financial approach",
+    "d. Group approach",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "The use of a \"One shot\" approach is discouraged, suggesting instead a:",
+  choices: [
+    "a. Standardized approach",
+    "b. \"Story line\" approach",
+    "c. Highly technical approach",
+    "d. Financial incentive approach",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Motivational Interviewing is associated with the psychology behind change and focuses on the:",
+  choices: [
+    "a. Process / HOW",
+    "b. Content / WHAT",
+    "c. Time / WHEN",
+    "d. Situation / WHERE",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "When educating a patient, research suggests it is crucial to target how many issues at a time?:",
+  choices: [
+    "a. Multiple issues",
+    "b. Zero issues",
+    "c. One issue",
+    "d. As many as needed",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The Health Belief Model (HBM) suggests that the likelihood of a patient taking action depends on their:",
+  choices: [
+    "a. Income level",
+    "b. Provider skill",
+    "c. Perceived seriousness of the health problem",
+    "d. Lack of knowledge",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In the Health Belief Model, perceived susceptibility means a patient believes they are:",
+  choices: [
+    "a. Highly intelligent",
+    "b. Likely to develop a health problem",
+    "c. Immune to disease",
+    "d. Financially capable",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "In the Health Belief Model, what are cues to action?",
+  choices: [
+    "a. Financial penalties",
+    "b. Reminder post cards for an appointment",
+    "c. New surgical procedures",
+    "d. Self-blame",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "According to Bandura, a teacher getting a student to engage in a new behavior happens when the student trusts themselves to be able to do it, which is called:",
+  choices: [
+    "a. Health belief",
+    "b. Self-efficacy",
+    "c. Locus of control",
+    "d. Behavioral intention",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The A-B-C model developed by Inglehart & Tedesco, stands for Affect, Behavior, and:",
+  choices: [
+    "a. Control",
+    "b. Culture",
+    "c. Cognition / thinking part",
+    "d. Consequence",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In the A-B-C model, which component relates to the patient's feelings and motivation?:",
+  choices: [
+    "a. B (Behavior)",
+    "b. A (Affect)",
+    "c. C (Cognition)",
+    "d. S (Situation)",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The B (Behavior) component of the A-B-C model includes directly related skills like brushing and flossing, and also indirect lifestyle factors such as:",
+  choices: [
+    "a. Intelligence",
+    "b. Self-esteem",
+    "c. Smoking",
+    "d. Age",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In the A-B-C model, which component relates to a patient's health beliefs, behavioral intentions, and knowledge?:",
+  choices: [
+    "a. A (Affect)",
+    "b. B (Behavior)",
+    "c. C (Cognition)",
+    "d. S (Situation)",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The Trans-theoretical Model (TTM) by Prochaska & DiClemente describes change as a process involving progress through a series of how many stages?",
+  choices: [
+    "a. 4",
+    "b. 6",
+    "c. 5",
+    "d. 7",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In the Trans-theoretical Model, which stage describes people who are not intending to change their behavior in the foreseeable future?:",
+  choices: [
+    "a. Pre-contemplation",
+    "b. Contemplation",
+    "c. Preparation",
+    "d. Action",
+    "e. Maintenance"
+  ],
+  correct: 0
+},
+{
+  q: "Which Trans-theoretical Model stage describes people intending to change and thinking about it?:",
+  choices: [
+    "a. Pre-contemplation",
+    "b. Contemplation",
+    "c. Preparation",
+    "d. Action",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which Trans-theoretical Model stage describes people intending to take action in the immediate future and are engaging in getting ready for it?:",
+  choices: [
+    "a. Precontemplation",
+    "b. Contemplation",
+    "c. Preparation",
+    "d. Action",
+    "e. Maintenance"
+  ],
+  correct: 2
+},
+{
+  q: "The Trans-theoretical Model stage where people have made specific overt modifications in their life styles within the past 6 months is:",
+  choices: [
+    "a. Preparation",
+    "b. Action",
+    "c. Maintenance",
+    "d. Termination",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The Trans-theoretical Model stage where people are changing their behavior but are still working to prevent relapse",
+  choices: [
+    "a. Preparation",
+    "b. Action",
+    "c. Maintenance",
+    "d. Termination",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The Trans-theoretical Model concept where individuals have zero temptation to change their behavior back to their old behavior is:",
+  choices: [
+    "a. Action",
+    "b. Maintenance",
+    "c. Relapse",
+    "d. Termination",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which example best reflects an Health Belief Model “cue to action” discussed?",
+  choices: [
+    "a. Calculus detected on bitewings",
+    "b. Patient reads a textbook chapter",
+    "c. Sticky notes on the bathroom mirror and floss kept visible",
+    "d. A higher deductible next year",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which item is listed under Health Belief Model “Other variables”?",
+  choices: [
+    "a. Clinic wait time",
+    "b. Knowledge about the disease",
+    "c. Tooth number involved",
+    "d. Provider seniority",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "A patient reports snacking frequently and missing 6 month dental visits. In A-B-C terms these are:",
+  choices: [
+    "a. Cognitions",
+    "b. Behaviors",
+    "c. Affects",
+    "d. Situations",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "In the A-B-C model, a patient saying “I’m scared of the drill” maps to:",
+  choices: [
+    "a. A (Affect/Feeling)",
+    "b. B (Behavior)",
+    "c. C (Cognition)",
+    "d. Situation",
+    "e. Time"
+  ],
+  correct: 0
+},
+{
+  q: "A patient says, “I’m nervous about cleanings,” “I snack between meals, and “I know flossing helps prevent cavities.” Which A-B-C mapping is correct?",
+  choices: [
+    "a. A=snacks; B=nervous; C=knows flossing helps",
+    "b. A=nervous; B=snacks; C=knows flossing helps",
+    "c. A=knows flossing helps; B=nervous; C=snacks",
+    "d. A=nervous, B=knows flossing helps; C=snacks",
+    ""
+  ],
+  correct: 1
+},
+      {
+  q: "A patient feels they can make a change in their daily habits after your encouragement. This is an example of",
+  choices: [
+    "a. Resistance",
+    "b. Self efficacy",
+    "c. Discrepancy",
+    "d. Resistance",
+    "e. None of the above"
+  ],
+  correct: 1
+},
+{
+  q: "Motivational interviewing includes all of the following EXCEPT",
+  choices: [
+    "a. Client-centered",
+    "b. Patient-centered",
+    "c. Directive method",
+    "d. Ambivalence",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "After drinking a glass of wine every day consistently for the past 20 years, Samantha decided she will stop drinking. She hasn’t been drinking for the past 2 months, but sometimes finds herself drinking a glass of wine once a week. In which stage of change do you think she is?",
+  choices: [
+    "a. Pre-contemplation",
+    "b. Contemplation",
+    "c. Preparation",
+    "d. Action",
+    "e. Maintenance"
+  ],
+  correct: 3
+},
+{
+  q: "For “Establishing rapport,” which elements are explicitly listed?",
+  choices: [
+    "a. Welcome, introductions, nonverbal, verbal (facilitative listening, reflective responding)",
+    "b. Only verbal skills",
+    "c. Insurance verification first",
+    "d. Treatment plan before introductions",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "In the OARS framework, what does the “S” stand for?",
+  choices: [
+    "a. Support",
+    "b. Summarize feelings",
+    "c. Sum up",
+    "d. Signal next steps",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "A paradigm shift in behavior change reflects:",
+  choices: [
+    "a. Motivation -> discipline",
+    "b. Compliance -> cooperation",
+    "c. Education -> enforcement",
+    "d. Autonomy -> authority",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Motivational Interviewing (MI) is best defined as a client-centered, directive method that enhances intrinsic motivation to change by:",
+  choices: [
+    "a. Reducing external rewards",
+    "b. Exploring and resolving ambivalence",
+    "c. Increasing provider authority",
+    "d. Delivering standardized education scripts",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The four general principles of motivational interviewing are:",
+  choices: [
+    "a. Educate, persuade, remind, reward",
+    "b. Plan, act, check, adjust",
+    "c. Express empathy; develop discrepancy; roll with resistance; support self-efficacy",
+    "d. Diagnose, treat, evaluate, recall",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "The rationale for developing discrepancy draws on which theory?",
+  choices: [
+    "a. Self-determination theory",
+    "b. Prospect theory",
+    "c. Social learning theory",
+    "d. Festinger’s cognitive dissonance theory",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Rolling with resistance is recommended because:",
+  choices: [
+    "a. Resistance shows the patient is noncompliant and needs firmer rules",
+    "b. It helps the provider “win” the argument",
+    "c. Reactance increases when patients feel their freedom is threatened; rolling with resistance lets them arrive at their own reasons for change",
+    "d. It shortens appointments",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "To support self-efficacy, a suggested action is:",
+  choices: [
+    "a. Reducing options to one mandatory plan",
+    "b. Warning of severe consequences first",
+    "c. Praising successes and letting patients perform behaviors successfully",
+    "d. Focusing only on barriers",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following is NOT a way to go about motivational interviewing?",
+  choices: [
+    "a. Cooperation; autonomy; evocation",
+    "b. Confrontation; patronizing; authoritarian; “just education”",
+    "c. Empathy; discrepancy; resistance; self-efficacy",
+    "d. Summaries; affirmations; reflections",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The instructor warns against the “righting reflex.” What behavior does this refer to?",
+  choices: [
+    "a. Paraphrasing to check understanding",
+    "b. Jumping in to correct and “fix” the patient",
+    "c. Using summaries to end the visit",
+    "d. Asking permission before advising",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which definition matches most closely with empathy?",
+  choices: [
+    "a. Agreeing with a patient’s choices",
+    "b. Sensing another’s emotions and imagining what they might be thinking or feeling",
+    "c. Reassuring patients that things will be fine",
+    "d. Reading verbatim from a scripted response",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which verbal example best demonstrates empathy?",
+  choices: [
+    "a. “It’s simple–just floss daily.”",
+    "b. “We don’t have time to discuss that now.”",
+    "c. “Follow the instructions exactly or it won’t work.”",
+    "d. “That must be really tough for you!”",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Why do patients often push back when told what to do?",
+  choices: [
+    "a. Fear of pain",
+    "b. Lack of knowledge",
+    "c. Reactance–attempting to re-establish their freedom",
+    "d. Scheduling conflicts",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which statement best defines “developing discrepancy” as used in the slides?",
+  choices: [
+    "a. Helping the patient list pros and cons of providers",
+    "b. Highlighting the gap between “what I do now” and “what is good for me to do”",
+    "c. Demonstrating differences between two treatment plans",
+    "d. Contrasting flossing with interdental brushes",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "According to the dissonance rationale, what typically happens after a patient experiences discrepancy?",
+  choices: [
+    "a. They accept the status quo to reduce stress",
+    "b. The patient is more motivated to move back toward consonance (change)",
+    "c. They defer decisions to the provider",
+    "d. They request more handouts",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which answer choice most clearly reflects the definition of self-efficacy",
+  choices: [
+    "a. Confidence in one’s ability to execute behaviors needed for reaching a goal",
+    "b. Satisfaction with past care",
+    "c. Interest in learning dental terminology",
+    "d. Desire to please the provider",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which nonverbal behavior is a sign of empathy?",
+  choices: [
+    "a. Taking notes silently",
+    "b. Pointing at X-rays",
+    "c. Folding arms",
+    "d. Head nodding",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "In an empathy response, the focus should be on:",
+  choices: [
+    "a. Explaining the mechanism of disease",
+    "b. Naming/validating the feeling and showing understanding",
+    "c. Correcting inaccuracies immediately",
+    "d. Comparing the patient to clinic averages",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "A patient shrugs and says, “It’s not that important.” To develop discrepancy without arguing, you would:",
+  choices: [
+    "a. Ask, “What are the pros and cons for you if nothing changes?”",
+    "b. Say, “You’re wrong–it is important.”",
+    "c. Warn about worst-case outcomes.",
+    "d. Change the topic.",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which is the best open-ended question aligned with motivational interviewing?",
+  choices: [
+    "a. “Do you floss daily?”",
+    "b. “You can floss daily, right?”",
+    "c. “Tell me about what makes flossing hard on busy days.”",
+    "d. “Are you ready to floss now?”",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which example is a true affirmation (skill-focused, non-judgemental)?",
+  choices: [
+    "a. “You kept your last two appointments even when work was hectic.”",
+    "b. “You’re a great patient.”",
+    "c. “Good job!”",
+    "d. “You finally did what I asked.”",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "What are two direct benefits of empathy in clinical encounters?",
+  choices: [
+    "a. Faster visits; fewer questions",
+    "b. Improved billing; higher case acceptance",
+    "c. Shows understanding; increases rapport",
+    "d. Lower litigation risk; better coding",
+    ""
+  ],
+  correct: 2
+},
+      {
+  q: "What is the first step when deciding the content for an intervention?",
+  choices: [
+    "a. The priority, what you want to change and WHY",
+    "b. The patients A-B-C’s",
+    "c. Stages of change",
+    "d. How much it will cost",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "What is the correct order of the 5 stages of change?",
+  choices: [
+    "a. Action, Contemplation, Maintenance, Pre contemplation, Preparation",
+    "b. Pre contemplation, Contemplation, Preparation, Action, Maintenance",
+    "c. Pre contemplation, Preparation, Contemplation, Action, Maintenance",
+    "d. Pre contemplation, Consensus, Preparation, Action, Maintenance",
+    "e. Pre contemplation, Contemplation, Preparation, Action, Termination"
+  ],
+  correct: 1
+},
+{
+  q: "What is a sign of good rapport?",
+  choices: [
+    "a. The patient is always negative",
+    "b. The patient is actively listening and asking the provider questions",
+    "c. The patient listens, and the provider does all the talking",
+    "d. The provider interrupts the patient to explain how to floss",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which of the following is an example of a discrepancy?",
+  choices: [
+    "a. The patient states they cannot afford to buy floss",
+    "b. The patient states they only floss when there is something in their teeth",
+    "c. The patient explains they didn’t know they had to floss under the gum line",
+    "d. The patient tells the provider they don’t want to floss",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which of the following is the most effective way for a dental provider to motivate a patient to improve oral hygiene?",
+  choices: [
+    "A. Scaring the patient about dental disease",
+    "B. Providing personalized education and goal-setting",
+    "C. Telling the patient what to do without explanation",
+    "D. Scheduling more frequent appointments",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What is a key component of patient-centered oral health education?",
+  choices: [
+    "A. Ignoring patient concerns",
+    "B. Assessing the patient’s knowledge and readiness to change",
+    "C. Giving generic advice",
+    "D. Recommending treatments without explanation",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "The use of motivational communication in dental practice primarily aims to:",
+  choices: [
+    "A. Convince the patient to follow instructions immediately",
+    "B. Encourage patients to explore their own reasons for improving oral health",
+    "C. Provide detailed technical explanations",
+    "D. Replace traditional dental education",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which strategy helps sustain long-term oral hygiene behavior in patients?",
+  choices: [
+    "A. Providing one-time instructions",
+    "B. Setting achievable goals and providing positive reinforcement",
+    "C. Focusing only on negative consequences of poor oral hygiene",
+    "D. Limiting patient involvement in treatment planning",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "How can dental providers enhance patient engagement during oral health education?",
+  choices: [
+    "A. Talking only about dental procedures",
+    "B. Using technical jargon frequently",
+    "C. Using interactive demonstrations and asking open-ended questions",
+    "D. Providing pamphlets without discussion",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "When motivating patients, which approach is most likely to increase adherence to oral hygiene routines?",
+  choices: [
+    "A. Emphasizing fear of disease progression",
+    "B. Highlighting personal benefits and involving patients in decision-making",
+    "C. Ignoring the patient’s lifestyle factors",
+    "D. Assuming all patients have the same motivation level",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What were Electronic Nicotine Delivery systems originally meant for?",
+  choices: [
+    "a. A means for smoking cessation",
+    "b. Tastes better than cigarettes",
+    "c. Cheaper than cigarettes",
+    "d. All of the above",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "What are some indicators of nicotine use in the oral cavity?",
+  choices: [
+    "a. Xerostomia, inflammation, and bruxism",
+    "b. Increased gingival blood flow, decreased number of caries, and halitosis",
+    "c. Decay, recession, and whiter teeth",
+    "d. Oxygenated gingival tissues, yellow teeth, and tooth loss",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which of the following are NOT a part of the 5 A’s?",
+  choices: [
+    "a. Ask",
+    "b. Advise",
+    "c. Assess",
+    "d. Announce",
+    "e. Arrange"
+  ],
+  correct: 3
+},
+{
+  q: "Which of the following are consequences of smoking?",
+  choices: [
+    "a. Implant failure",
+    "b. increased risk of dry socket",
+    "c. Delayed wound healing",
+    "d. A and c are correct",
+    "e. A, b and c are correct"
+  ],
+  correct: 4
+},
+{
+  q: "What is smoking cessation consistently associated with?",
+  choices: [
+    "a. Reduction in tooth loss risk, with risk approaching “never smokers” after 10-20 years",
+    "b. No change in tooth loss risk",
+    "c. Increased tooth loss risk",
+    "d. Lower quality of life",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "What is leukoplakia?",
+  choices: [
+    "a. Decreased white blood cell count",
+    "b. White patch on mucous membranes of the mouth",
+    "c. White patch that wipes off",
+    "d. Oral cancer",
+    "e. Paleness"
+  ],
+  correct: 1
+},
+{
+  q: "What causes hairy tongue?",
+  choices: [
+    "a. Genetics",
+    "b. Poor brushing and flossing",
+    "c. Poor diet",
+    "d. Bacterial and fungal overgrowth stimulates the filliform papillae to hypertrophy"
+  ],
+  correct: 3
+},
+{
+  q: "What are the 5 A’s of the dental provider?",
+  choices: [
+    "A. Ask, Advise, Assess, Assist, Arrange.",
+    "B. Ask, Advise, Analyze, Assist, Arrange",
+    "C. Ask, Alalyze, Advise, Assist, Arrange",
+    "D. Ask, Analyze, Assign, Assist, Arrange",
+    "E. Ask, Advise, Assign, Assist, Arrange"
+  ],
+  correct: 0
+},
+{
+  q: "Which of the following is a major oral health effect associated with tobacco use?",
+  choices: [
+    "a. Reduced risk of periodontal disease",
+    "b. Accelerated wound healing",
+    "c. Leukoplakia and delayed healing",
+    "d. Enhanced sense of taste",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Smoking is a major risk factor for",
+  choices: [
+    "a. stroke",
+    "b. peripheral vascular disease",
+    "c. aortic aneurysm",
+    "d. sudden death",
+    "e. a, b, c and d are correct"
+  ],
+  correct: 4
+},
+{
+  q: "Approximately how many Americans die each year due to smoking-related causes?",
+  choices: [
+    "a. 180,000",
+    "b. 250,000",
+    "c. 400,000",
+    "d. 600,000",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "According to the 10 Key Guideline Recommendations, combining counseling and medication:",
+  choices: [
+    "a. Is less effective than counseling alone",
+    "b. Is more effective than either used alone",
+    "c. Should only be used for adolescents",
+    "d. Is recommended only for heavy smokers",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which of the following describes “Hairy Tongue”?",
+  choices: [
+    "a. A bacterial infection that erodes papillae",
+    "b. Hypertrophy of filiform papillae due to bacterial/fungal overgrowth",
+    "c. A precancerous white lesion that does not wipe off",
+    "d. Inflammation of the soft palate caused by smokeless tobacco",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Tobacco dependence is recognized as:",
+  choices: [
+    "a. A social habit with no medical implications",
+    "b. A chronic disease and clinical addiction",
+    "c. A psychological condition that cannot be treated",
+    "d. A temporary behavioral choice",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "All of the following are effects of Nicotine EXCEPT:",
+  choices: [
+    "a. Increased Heart Rate",
+    "b. Increased Blood Pressure",
+    "c. Not Addictive",
+    "d. Appetitive Suppressant",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which components in e-liquids significantly increase microbial adhesion and decrease enamel hardness?",
+  choices: [
+    "A. Benzene and arsenic",
+    "B. Propylene glycol and benzoic acid",
+    "C. Vegetable glycerin and flavorings",
+    "D. Formaldehyde and acrolein",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "According to the CDC, approximately what portion of gum disease in U.S. adults is attributed to smoking?",
+  choices: [
+    "A. 10%",
+    "B. 25%",
+    "C. 50%",
+    "D. 75%",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "How does nicotine contribute to periodontal disease progression?",
+  choices: [
+    "A. Increases blood flow and collagen formation",
+    "B. Reduces blood flow and impairs healing",
+    "C. Increases saliva production and reduces inflammation",
+    "D. Eliminates harmful anaerobic bacteria",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which oral condition involves elongation of filiform papillae and is more common in smokers?",
+  choices: [
+    "A. Leukoplakia",
+    "B. Lichen planus",
+    "C. Hairy tongue",
+    "D. Black line stain",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Which symptoms on the Minnesota Nicotine Withdrawal Scale indicate nicotine dependence?",
+  choices: [
+    "A. Rash, fever, and tremor",
+    "B. Hair loss, dry skin, and joint pain",
+    "C. Irritability, craving, difficulty concentrating",
+    "D. Nausea only",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "In the stages of change model, which stage involves awareness of the problem but uncertainty about quitting?",
+  choices: [
+    "A. Precontemplation",
+    "B. Contemplation",
+    "C. Preparation",
+    "D. Action",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What increases the caries risk in smokeless tobacco users?",
+  choices: [
+    "A. High fluoride content",
+    "B. Added sugars and reduced salivary flow",
+    "C. Antibacterial herbal ingredients",
+    "D. pH buffering agents",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "What definition does not match in OARS?",
+  choices: [
+    "a. O- open ended questions",
+    "b. A- Affirmative",
+    "c. R- Reflective",
+    "d. S- summarize",
+    "e. None of the above"
+  ],
+  correct: 4
+},
+{
+  q: "In a patient who is mildly addicted, how many cigarettes do they likely smoke per day?",
+  choices: [
+    "a. 6-19",
+    "b. <5",
+    "c. 20-40",
+    "d. >40",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which medication is considered a “controller” for tobacco cessation?",
+  choices: [
+    "a. Nicotine patch",
+    "b. Nicotine nasal spray",
+    "c. Nicotine inhaler",
+    "d. Nicotine lozenges",
+    ""
+  ],
+  correct: 0
+},
+{
+  q: "Which of the following is not a diagnostic factor in the diagnosis of addiction?",
+  choices: [
+    "a. Daily cigarette use",
+    "b. How educated the patient is about smoking",
+    "c. 1st cigarette in the AM",
+    "d. Health and psychiatric history",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "Which medication is considered a “reliever” for tobacco cessation?",
+  choices: [
+    "a. Nicotine patch",
+    "b. Nicotine gum",
+    "c. Veriniclin",
+    "d. Bupropion",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "All of the following are smoking cessation programs or information except:",
+  choices: [
+    "a. American Lung Association",
+    "b. Michigan Tobacco Quit Line",
+    "c. Conversations with a family member",
+    "d. University of Michigan Health System",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "What is the first thing a provider should say after a patient expresses difficulty quitting smoking?",
+  choices: [
+    "a. “Why can't you stop?”",
+    "b. “I completely understand how difficult it is to quit smoking!”",
+    "c. “I have never smoked, so I wouldn’t get it.”",
+    "d. “If it is too hard, just don't quit.”",
+    ""
+  ],
+  correct: 1
+},
+{
+  q: "You have a patient who picks up a cigarette within the first 6-30 minutes of their day. What level of addiction is this considered?",
+  choices: [
+    "a. Mild",
+    "b. Moderate",
+    "c. Severe",
+    "d. Very severe",
+    ""
+  ],
+  correct: 2
+},
+{
+  q: "Analyzing what stage the patient is in is part of which step in the A-B-C process?",
+  choices: [
+    "a. Affect",
+    "b. Behavior",
+    "c. Cognition / thinking",
+    "d. This is not a step in the ABC process.",
+    ""
+  ],
+  correct: 3
+},
+{
+  q: "Which of the following alternatives describes content considerations that are specific to tobacco use?",
+  choices: [
+    "a. Ask / inform about medication",
+    "b. Ask / inform about hot lines",
+    "c. Ask / inform about the role of social support sources",
+    "d. a and c are correct",
+    "e. a, b and c are correct."
+  ],
+  correct: 4
+}
+     ];
+    
+   // Use questions in listed order – NO randomization.
+let shuffledQuestions = questions.map((q,idx)=>({...q, id: idx}));
+    // Numbering for display, so always starts at 1
+    function renderQuestions() {
+      let s="";
+      shuffledQuestions.forEach((q,idx)=>{
+        s+=`
+        <div class="question" id="question-${idx}">
+          <div>
+            <span class="question-number">${idx+1}.</span>
+            <span>${q.q}</span>
+          </div>
+          <form class="choices" data-idx="${idx}">
+            ${q.choices.map((choice,ci)=>
+              `<label id="q${idx}-c${ci}">
+                 <input type="radio" name="q${idx}" value="${ci}"/> ${choice}
+               </label>`).join('')}
+          </form>
+        </div>`;
+      });
+      document.getElementById('examContainer').innerHTML = s;
+    }
+    renderQuestions();
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+      document.querySelectorAll('.theme-toggle').forEach(btn=>btn.textContent = document.body.classList.contains("dark-mode") ? "🌙 Switch theme" : "☀️ Switch theme");
+    }
+
+    // Progress bar
+    function updateProgressBar() {
+      const total=shuffledQuestions.length;
+      let answered=0;
+      shuffledQuestions.forEach((_,idx)=>{
+        if(document.querySelector(`input[name="q${idx}"]:checked`)) answered++;
+      });
+      document.getElementById('progressBar').style.width = ((answered/total)*100)+"%";
+    }
+    document.addEventListener('change', updateProgressBar);
+
+    // Grading
+    let examSubmitted = false;
+    function submitExam(){
+      if (examSubmitted) return;
+      examSubmitted = true;
+
+      let score = 0;
+      shuffledQuestions.forEach((q, idx) => {
+        let ans = document.querySelector(`input[name="q${idx}"]:checked`);
+        q.choices.forEach((choice,ci)=>{
+          let label = document.getElementById(`q${idx}-c${ci}`);
+          label.classList.remove('correct','incorrect');
+        });
+        if(ans){
+          let val = Number(ans.value);
+          if(val===q.correct){
+            score++;
+            document.getElementById(`q${idx}-c${val}`).classList.add('correct');
+          }else{
+            document.getElementById(`q${idx}-c${val}`).classList.add('incorrect');
+            document.getElementById(`q${idx}-c${q.correct}`).classList.add('correct');
+          }
+        }else{
+          // If unanswered show correct
+          document.getElementById(`q${idx}-c${q.correct}`).classList.add('correct');
+        }
+      });
+      document.getElementById('scoreContainer').textContent =
+      `Score: ${score}/${shuffledQuestions.length} (${Math.round(100*score/shuffledQuestions.length)}%)`;
+      document.querySelectorAll('input[type="radio"]').forEach(inp=>inp.disabled=true);
+    }
+
+    // Warn before leaving page
+    window.onbeforeunload = function() {
+      if(!examSubmitted) return 'Are you sure you want to reload? Your answers will be lost!';
+    };
+  </script>
+</body>
+</html> 
